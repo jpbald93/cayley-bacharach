@@ -73,11 +73,13 @@ bad=0
 for t in $TESTS; do
   mk "$t"
   if ! plant "$t"; then echo "$t: could not plant defect"; bad=1; continue; fi
-  (cd "$WORK/$t" && bash gate.sh > gate.log 2>&1)
+  (cd "$WORK/$t" && bash gate.sh > gate.log 2>&1); st=$?
   got="$(grep -E '^(PASS|FAIL)' "$WORK/$t/gate.log" | tail -1)"
   want="$(expect "$t")"
-  if [[ "$got" == "$want"* ]]; then printf 'ok    %-9s rejected: %s\n' "$t" "$got"
-  else printf 'NOT OK %-9s expected "%s", got "%s" (log: %s)\n' "$t" "$want" "$got" "$WORK/$t/gate.log"; bad=1; fi
+  # A rejection must both exit nonzero and print the expected FAIL message; a PASS line never counts.
+  if [ "$st" -ne 0 ] && [[ "$got" == "$want"* ]] && ! grep -q '^PASS' "$WORK/$t/gate.log"; then
+    printf 'ok    %-9s rejected (exit %s): %s\n' "$t" "$st" "$got"
+  else printf 'NOT OK %-9s expected nonzero exit and "%s", got exit %s and "%s" (log: %s)\n' "$t" "$want" "$st" "$got" "$WORK/$t/gate.log"; bad=1; fi
   rm -rf "$WORK/$t/.lake/build"
 done
 [ "$bad" -eq 0 ] && { echo "ALL TAMPERING TESTS REJECTED"; rm -rf "$WORK"; }

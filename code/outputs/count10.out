@@ -1,0 +1,10 @@
+{'q': 3, 'irreducible_conics_with_2_zeros_by_count': {4: 468}, 'violations': 0}
+{'q': 4, 'irreducible_conics_with_2_zeros_by_count': {5: 3024}, 'violations': 0}
+{'q': 5, 'irreducible_conics_with_2_zeros_by_count': {6: 12400}, 'violations': 0}
+{'q': 7, 'irreducible_conics_with_2_zeros_by_count': {8: 100548}, 'violations': 0}
+{'q': 8, 'irreducible_conics_with_2_zeros_by_count': {9: 34915}, 'violations': 0}
+{'q': 9, 'irreducible_conics_with_2_zeros_by_count': {10: 35459}, 'violations': 0}
+{'q': 8, 'case': 'common conic xz+y^2', 'conic_points': 9, 'nine_point': 324, 'counterexamples': 0}
+{'q': 8, 'case': 'common line', 'samples': 3000, 'nine_point': 1083, 'counterexamples': 0}
+{'q': 9, 'case': 'common conic xz+y^2', 'conic_points': 10, 'nine_point': 0, 'counterexamples': 0}
+{'q': 9, 'case': 'common line', 'samples': 3000, 'nine_point': 0, 'counterexamples': 0}

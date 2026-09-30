@@ -1,0 +1,3 @@
+{'q': 3, 'common_line_max_common_zeros': 8, 'pencils_with_9': 0, 'counterexamples': 0, 'example': None}
+{'q': 3, 'common_conic_max_common_zeros': 5, 'counterexamples': 0}
+{'q': 8, 'common_line_max_common_zeros': 18, 'pencils_with_9': 1493, 'counterexamples': 0, 'example': None}

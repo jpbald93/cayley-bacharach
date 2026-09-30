@@ -1,0 +1,5 @@
+q = 2 {'line_lemma': (7, False), 'conic_line_lemma': (3, True), 'criterion': {'npoints': 7, 'tested': 0, 'general_position': 0, 'failures': 0, 'example': None}}
+q = 3 {'line_lemma': (6, True), 'conic_line_lemma': (3, True), 'criterion': {'npoints': 13, 'tested': 1287, 'general_position': 1287, 'failures': 0, 'example': None}}
+q = 4 {'line_lemma': (6, True), 'conic_line_lemma': (3, True), 'criterion': {'npoints': 21, 'tested': 203490, 'general_position': 191520, 'failures': 0, 'example': None}}
+q = 5 {'line_lemma': (6, True), 'conic_line_lemma': (3, True), 'criterion': {'npoints': 31, 'tested': 20000, 'general_position': 18846, 'failures': 0, 'example': None}}
+q = 7 {'line_lemma': (6, True), 'conic_line_lemma': (3, True), 'criterion': {'npoints': 57, 'tested': 20000, 'general_position': 19250, 'failures': 0, 'example': None}}

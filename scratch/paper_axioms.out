@@ -72,4 +72,9 @@
 'PlaneCubic.pascal_points_off_conic' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PlaneCubic.vanishesAt_smul_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PlaneCubic' does not depend on any axioms
-AX 0
+'PlaneCubic.cayley_bacharach_card3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PlaneCubic.cayley_bacharach_classical_card3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PlaneCubic.cayley_bacharach_classical_zmod3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PlaneCubic.cayley_bacharach_classical_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PlaneCubic.no_common_line_card3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PlaneCubic.no_common_conic_card3' depends on axioms: [propext, Classical.choice, Quot.sound]

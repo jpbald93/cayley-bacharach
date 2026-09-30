@@ -73,3 +73,9 @@ import CayleyBacharach
 #print axioms PlaneCubic.pascal_points_off_conic
 #print axioms PlaneCubic.vanishesAt_smul_iff
 #print axioms PlaneCubic
+#print axioms PlaneCubic.cayley_bacharach_card3
+#print axioms PlaneCubic.cayley_bacharach_classical_card3
+#print axioms PlaneCubic.cayley_bacharach_classical_zmod3
+#print axioms PlaneCubic.cayley_bacharach_classical_finite
+#print axioms PlaneCubic.no_common_line_card3
+#print axioms PlaneCubic.no_common_conic_card3

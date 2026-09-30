@@ -42,21 +42,18 @@ PY
               sed -i 's|(hK : 8 ≤ Fintype.card K)|(hK : 4 ≤ Fintype.card K)|' "$d/$C"
               grep -q '(hK : 4 ≤ Fintype.card K)' "$d/$C" || return 1 ;;
     wrap)     # Tests the output parser alone: the source filter's `axiom` check is switched off in
-              # this copy's gate, and a long-named extra axiom is smuggled into a main theorem so
-              # that Lean wraps it onto a continuation line of the #print axioms report.
+              # this copy's gate, and a long-named extra axiom is used by a new declaration that the
+              # gate is told to check, so that Lean wraps it onto a continuation line.
               python3 - "$d/$C" <<'PY'
 import sys, pathlib
 p = pathlib.Path(sys.argv[1]); s = p.read_text()
-s = s.replace("theorem cayley_bacharach_classical_card8 ", "theorem cayley_bacharach_classical_card8_orig ", 1)
-s = s.replace("end PlaneCubic",
-  "axiom zz_extra_axiom_with_a_long_name_for_the_negative_gate_test : True\n"
-  "theorem cayley_bacharach_classical_card8 : True := by\n"
-  "  have := @cayley_bacharach_classical_card8_orig.{0}\n  exact zz_extra_axiom_with_a_long_name_for_the_negative_gate_test\n\n"
-  "end PlaneCubic", 1)
-p.write_text(s)
+add = ("axiom zz_extra_axiom_with_a_long_name_for_the_negative_gate_test : True\n"
+       "theorem zz_uses_extra_axiom : True := zz_extra_axiom_with_a_long_name_for_the_negative_gate_test\n\n")
+i = s.rindex("end PlaneCubic"); p.write_text(s[:i] + add + s[i:])
 PY
-              grep -q 'theorem cayley_bacharach_classical_card8_orig' "$d/$C" || return 1
+              grep -q 'theorem zz_uses_extra_axiom' "$d/$C" || return 1
               sed -i 's/|\\baxiom\\b//' "$d/gate.sh"
+              sed -i 's|^REQUIRED="|REQUIRED="PlaneCubic.zz_uses_extra_axiom |' "$d/gate.sh"
               ! grep -q 'baxiom' "$d/gate.sh" || return 1 ;;
     *) return 1 ;;
   esac

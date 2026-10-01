@@ -16,3 +16,4 @@ import CayleyBacharach.FiniteField
 import CayleyBacharach.ClassicalFinite
 import CayleyBacharach.ClassicalSmall
 import CayleyBacharach.ClassicalF3
+import CayleyBacharach.Bridge

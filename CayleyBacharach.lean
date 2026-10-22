@@ -18,3 +18,5 @@ import CayleyBacharach.ClassicalSmall
 import CayleyBacharach.ClassicalF3
 import CayleyBacharach.Bridge
 import CayleyBacharach.CriterionIff
+import CayleyBacharach.L14
+import CayleyBacharach.L15Classical
